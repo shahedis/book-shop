@@ -1,15 +1,15 @@
 <template>
-  <Skills/>
+<div id="app">
+  <Books/>
+</div>
 </template>
 
 <script>
-import Skills from './components/Skills.vue'
+import Books from './components/Books.vue'
 
 export default {
   name: 'App',
-  components: {
-    Skills
-  }
+  components: { Books }
 }
 </script>
 
