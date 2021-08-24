@@ -1,18 +1,22 @@
 <template>
-<div id="app">
-  <Books/>
-</div>
+  <div id="app">
+    <signupForm></signupForm>
+  </div>
 </template>
 
 <script>
-import Books from './components/Books.vue'
-
+import SignupForm from './components/SignupForm.vue'
 export default {
+  components: { SignupForm },
   name: 'App',
-  components: { Books }
+  
 }
 </script>
 
 <style>
-
+#app{
+  font-family: monospace, sans-serif, 'Segoe UI', Tahoma, Verdana;
+  text-align: center;
+  margin-top: 30px;
+}
 </style>
