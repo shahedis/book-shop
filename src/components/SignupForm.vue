@@ -29,7 +29,7 @@ export default {
         handleSubmit(){
             this.passwordError = this.password.length > 5 ?
             '' : 'password must be at least 6 chars long'
-            if(this.passwordError){
+            if(!this.passwordError){
                 console.log("Submitted");
                 console.log('email : ', this.email);
                 console.log('password : ', this.password);
