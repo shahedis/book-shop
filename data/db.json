@@ -12,6 +12,18 @@
             "story",
             "George-Orwell"
         ],
+        "comments": [
+            {
+                "commentId": 0,
+                "commentDesc": "good",
+                "commentAuthor": "sahar"
+            },
+            {
+                "commentId": 1,
+                "commentDesc": "bad",
+                "commentAuthor": "sadaf"
+            }
+        ],
         "rate":0
         },
         {
@@ -25,6 +37,18 @@
         "tags": [
             "biograph",
             "Michelle-Obama"
+        ],
+        "comments": [
+            {
+                "commentId": 0,
+                "commentDesc": "good",
+                "commentAuthor": "sahar"
+            },
+            {
+                "commentId": 1,
+                "commentDesc": "bad",
+                "commentAuthor": "sadaf"
+            }
         ],
         "rate":0
         },
@@ -40,6 +64,18 @@
             "classics",
             "fiction",
             "J.D-Salinger"
+        ],
+        "comments": [
+            {
+                "commentId": 0,
+                "commentDesc": "good",
+                "commentAuthor": "sahar"
+            },
+            {
+                "commentId": 1,
+                "commentDesc": "bad",
+                "commentAuthor": "sadaf"
+            }
         ],
         "rate":0
         },
@@ -69,6 +105,18 @@
             "story",
             "social science fiction",
             "George-Orwell"
+        ],
+        "comments": [
+            {
+                "commentId": 0,
+                "commentDesc": "good",
+                "commentAuthor": "sahar"
+            },
+            {
+                "commentId": 1,
+                "commentDesc": "bad",
+                "commentAuthor": "sadaf"
+            }
         ],
         "rate":0
         }
