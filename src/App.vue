@@ -1,13 +1,22 @@
 <template>
   <div id="app">
-    <signupForm></signupForm>
+      <!-- <div class="nav">
+        <router-link to="/">Home</router-link>
+        <router-link>About</router-link>
+        <router-link :to="{name:'signup'}">Sign Up</router-link>
+        <router-link>Profile</router-link>
+    </div>
+    <router-view/> -->
+    <!-- <Home></Home> -->
+    <Home></Home>
   </div>
 </template>
 
 <script>
-import SignupForm from './components/SignupForm.vue'
+import Home from './components/Home.vue'
+
 export default {
-  components: { SignupForm },
+  components: { Home },
   name: 'App',
   
 }
