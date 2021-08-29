@@ -1,12 +1,13 @@
 <template>
-<div>
-    <div class="book_list">
-        <!-- <input type="text" v-model="searchQuery"> -->
-        <div v-for="book in books" :key="book.id">
-            <book-in-list :book="book"/>
-        </div>
-        {{matchingBookSearch}}
-        {{searchQuery}}
+<div class="books_list_wrapper">
+    <router-link
+        v-for="book in books" :key="book.id"
+        class="books_list"
+        :to="{ name: 'bookDetails', params: { id: book.id } }">
+        <book-in-list :book="book"/>
+    </router-link>
+    <div class="content">
+        <router-view></router-view>
     </div>
 </div>
 </template>
@@ -14,42 +15,35 @@
 <script>
 
 import fetchAllBooks from '../composables/fetchAllBooks'
-// import bookSearch from '../composables/bookSearch'
 import { onMounted } from 'vue'
 import BookInList from './BookInList.vue'
 
 export default {
-  components: { BookInList },
-    props: {
-        loading: {
-            type: Boolean,
-            required: true
-        }
-    },
-    setup (props){
-        const {books, error, getBooks} = fetchAllBooks()
-        // const {searchQuery, matchingBookSearch} = bookSearch(books)
+    components: {BookInList},
+    setup (){
+        const {books, error, loading, getBooks} = fetchAllBooks()
 
         onMounted(getBooks)
-        console.log(props);
         return{
             books,
             error,
-            // searchQuery,
-            // matchingBookSearch
+            loading
         }
     }
 
 }
 </script>
 
-<style>
-.book_list{
+<style scoped>
+/* .books_list{
+    padding: 20px;
+} */
+.books_list_wrapper{
     display: flex;
-    flex-direction: row;
-    gap: 73px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    gap: 38px;
+    padding: 90px 10px;
 }
 </style>

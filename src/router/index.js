@@ -2,10 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import SignupForm from '../components/SignupForm.vue'
 import SingleBook from '../components/SingleBook.vue'
 import Home from '../components/Home.vue'
+import NotFound from '../components/NotFound.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/home',
         name: 'home',
         component: Home
     },
@@ -19,6 +20,15 @@ const routes = [
         name: 'bookDetails',
         component: SingleBook,
         props: true
+    },
+    {
+        path: '/:catchAll(.*)',
+        name: 'notFound',
+        component: NotFound
+    },
+    {
+        path: '/books',
+        redirect: '/home'
     }
 ]
 

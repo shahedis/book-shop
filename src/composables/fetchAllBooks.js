@@ -4,10 +4,11 @@ import axios from 'axios'
 const fetchAllBooks = ()=>{
     const books = ref([])
     const error = ref(null)
+    const loading = ref(true)
     const address = 'http://localhost:3000/books'
 
     const getBooks= async ()=> {
-        axios.get(address)
+        await axios.get(address)
         .then(response=>{books.value = response.data
         })
         .catch(err=>{
@@ -15,10 +16,12 @@ const fetchAllBooks = ()=>{
             console.log(err)
             error.value = err
         })
+        loading.value = false
     }
     return{
         books,
         error,
+        loading,
         getBooks
     }
 }

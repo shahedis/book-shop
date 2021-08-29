@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-      <!-- <div class="nav">
-        <router-link to="/">Home</router-link>
-        <router-link>About</router-link>
-        <router-link :to="{name:'signup'}">Sign Up</router-link>
-        <router-link>Profile</router-link>
+    <div class="links_wrapper">
+      <router-link :to="{name: 'home', params:{}}" class="link">Home</router-link>
+      <router-link :to="{name: 'signup'}" class="link">Signup</router-link>
     </div>
-    <router-view/> -->
-    <!-- <Home></Home> -->
-    <Home></Home>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
 <script>
-import Home from './components/Home.vue'
 
 export default {
-  components: { Home },
-  name: 'App',
-  
+  name: 'App',  
 }
 </script>
 
@@ -27,5 +22,19 @@ export default {
   font-family: monospace, sans-serif, 'Segoe UI', Tahoma, Verdana;
   text-align: center;
   margin-top: 30px;
+}
+.links_wrapper{
+  background: #e4bd50;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.link{
+  font-size: 36px;
+  text-decoration: none;
+  background: azure;
+  padding: 8px 16px;
+  float: right;
 }
 </style>

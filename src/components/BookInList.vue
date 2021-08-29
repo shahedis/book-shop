@@ -5,7 +5,6 @@
         <h2>{{book.tittle}}</h2>
         <h3>{{book.price}}</h3>
     </div>
-    
   </div>
 </template>
 
@@ -20,7 +19,4 @@ export default {
     width: 300px;
     height: 300px;
 }
-/* .book_info{
-    
-} */
 </style>
