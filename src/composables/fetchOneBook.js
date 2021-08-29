@@ -2,27 +2,29 @@ import { ref } from "vue"
 import axios from 'axios'
 
 const fetchOneBook = () =>{
-    const books = {}
+    let books = null
     const error = ref(null)
     const book = ref({})
     const loading = ref(true)
     const address = 'http://localhost:3000/books'
 
     const getBook = async(id) =>{
-       axios(address)
-       .then(response=>{
-            this.books=response.data
-            book.value = filterById(books, id)
+        axios.get(address)
+        .then(response=>{
+            books = response.data
+            books.map(elem => {
+                if(elem.id == id){
+                    book.value = elem
+                    return
+                }
+            })
         })
-        .catch(error=>{
-            console.log(error)
+        .catch(err=>{
+            console.log(err)
+            error.value = err
         })
-        loading.value = false
-    }
 
-    function filterById(jsonObject, id) {
-        return jsonObject.filter(function(jsonObject){
-            return (jsonObject['id'] == id);})[id]
+        loading.value = false
     }
 
     return{

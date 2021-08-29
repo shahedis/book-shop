@@ -9,7 +9,8 @@ const fetchAllBooks = ()=>{
 
     const getBooks= async ()=> {
         await axios.get(address)
-        .then(response=>{books.value = response.data
+        .then(response=>{
+            books.value = response.data
         })
         .catch(err=>{
             console.log('-----error-------')
