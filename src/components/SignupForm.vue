@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 form{
     background-color: #eeeeee82;
     box-shadow: 1px 2px 24px -3px rgb(72 72 72 / 43%);
