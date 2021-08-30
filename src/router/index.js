@@ -29,6 +29,10 @@ const routes = [
     {
         path: '/books',
         redirect: '/home'
+    },
+    {
+        path: '/',
+        redirect: '/home'
     }
 ]
 

@@ -1,12 +1,12 @@
 <template>
-<div>
-  <div>
-    <img :src="book.photo"/>
+<div class="single_book_wrapper">
+  <div class="single_book_info">
+    <img :src="book.photo" class="single_book_img">
     <h2>{{book.tittle}}</h2>
-    <h3>{{book.author}}</h3>
+    <h4 style="margin-top: -7px">{{book.author}}</h4>
   </div>
   <div>
-    <p>{{book.description}}</p>
+    <p style="text-align: left">{{book.description}}</p>
   </div>
 </div>
 </template>
@@ -33,5 +33,13 @@ export default {
 </script>
 
 <style>
-
+.single_book_wrapper{
+  padding: 70px;
+}
+.single_book_info{
+  margin-bottom: 50px;
+}
+.single_book_img{
+  width: 200px;
+}
 </style>

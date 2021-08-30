@@ -19,7 +19,9 @@ import { onMounted } from 'vue'
 import BookInList from './BookInList.vue'
 
 export default {
-    components: {BookInList},
+    components: {
+        'book-in-list': BookInList
+    },
     setup (){
         const {books, error, loading, getBooks} = fetchAllBooks()
 
@@ -35,15 +37,15 @@ export default {
 </script>
 
 <style scoped>
-/* .books_list{
-    padding: 20px;
-} */
+.books_list{
+    text-decoration: none;
+}
 .books_list_wrapper{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 38px;
     padding: 90px 10px;
+    gap: 60px 90px;
 }
 </style>
