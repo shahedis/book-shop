@@ -28,11 +28,12 @@ export default {
         let products = computed(function () {
         return store.state.products
         });
+
         let productsCount = store.getters.productsLength
 
         return{
             products,
-            productsCount
+            productsCount,
         }
     }
 
@@ -48,7 +49,7 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 90px 10px;
+    padding: 20px 10px;
     gap: 40px 65px;
 }
 </style>

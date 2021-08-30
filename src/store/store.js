@@ -156,6 +156,10 @@ export default createStore({
         }
     },
     mutations: {
+        printProduct(state){
+            state.cart.push("yes")
+            console.log("yess")
+        },
         addToCart(state, item){
             item.quantity = 1;
             state.cart.push(item)
@@ -172,6 +176,11 @@ export default createStore({
             state.cart = state.cart.filter((cartItem =>{
                 return cartItem.id != item.id
             }))
+        }
+    },
+    action:{
+        printProduct(context){
+            context.commit('printProduct')
         }
     }
 })
