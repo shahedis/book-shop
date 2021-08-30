@@ -54,7 +54,7 @@ export default {
   display: flex;
 }
 .link{
-  font-size: 36px;
+  font-size: 23px;
   text-decoration: none;
   background: azure;
   padding: 8px 16px;

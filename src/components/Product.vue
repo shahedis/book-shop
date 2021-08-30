@@ -1,16 +1,16 @@
 <template>
   <div>
-    <img :src="book.photo" class="book_img">
+    <img :src="product.photo" class="book_img">
     <div class="book_info">
-        <h3>{{book.tittle}}</h3>
-        <h4>{{book.price}}</h4>
+        <h3>{{product.tittle}}</h3>
+        <h4>${{product.price}}</h4>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    props: ['book']
+    props: ['product']
 }
 </script>
 
