@@ -1,9 +1,9 @@
 <template>
-  <div id="app">
+  <div id="app" :class="[grayBack ? 'gray-theme' : '']">
     <div class="menue_options">
       <div class="links_wrapper">
-        <router-link :to="{name: 'home', params:{}}" class="link">Home</router-link>
-        <router-link :to="{name: 'signup'}" class="link">Signup</router-link>
+        <router-link :to="{name: 'home', params:{}}" class="menue_item" @click="grayBack = false" active-class="active">Home</router-link>
+        <router-link :to="{name: 'signup'}" class="menue_item" @click="grayBack = true" active-class="active">Signup</router-link>
       </div>
       <div class="route_buttons">
         <button @click="redirect" class="route_button">Redirect</button>
@@ -21,6 +21,11 @@
 
 export default {
   name: 'App',  
+  data(){
+    return{
+      grayBack: false
+    }
+  },
   methods:{
     redirect(){
       this.$router.push({name: 'home'})
@@ -30,7 +35,7 @@ export default {
     },
     forward(){
       this.$router.go()
-    }
+    },
   }
 }
 </script>
@@ -39,7 +44,7 @@ export default {
 #app{
   font-family: monospace, sans-serif, 'Segoe UI', Tahoma, Verdana;
   text-align: center;
-  margin-top: 30px;
+  padding: 20px 0;
 }
 .menue_options{
   display: flex;
@@ -49,16 +54,17 @@ export default {
   padding: 0px 48px;
 }
 .links_wrapper{
-  background: #e4bd50;
-  padding: 20px;
+  gap: 5px;
   display: flex;
 }
-.link{
-  font-size: 23px;
+.menue_item{
+  font-size: 20px;
   text-decoration: none;
-  background: azure;
-  padding: 8px 16px;
-  float: right;
+  padding: 7px 13px;
+  color: #333;
+  border: 1px solid #e4bd50;
+  border-radius: 7px;
+  background: transparent;
 }
 .route_buttons{
   gap: 10px;
@@ -71,5 +77,11 @@ export default {
   border: 1px solid #e4bd50;
   background: transparent;
   color: #333
+}
+.gray-theme{
+  background: transparent;
+}
+.active{
+  background: #e4bd50;
 }
 </style>

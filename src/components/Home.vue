@@ -1,5 +1,5 @@
 <template>
-<h1>{{productsCount}} books</h1>
+<h3>There are {{productsCount}} books</h3>
 <div class="books_list_wrapper">
     <router-link v-for="product in products" :key="product.id" class="books_list" :to="{ name: 'bookDetails', params: { id: product.id } }">
         <Product :product="product" />
@@ -12,7 +12,7 @@
 
 <script>
 
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import {useStore} from 'vuex'
 import Product from './Product.vue'
 
@@ -24,12 +24,11 @@ export default {
     setup (){
 
         const store = useStore()
+        const productsCount = store.getters.productsLength
+        
+        const products = computed(() => store.state.products)
 
-        let products = computed(function () {
-        return store.state.products
-        });
-
-        let productsCount = store.getters.productsLength
+        onMounted(()=> store.dispatch('GET_PRODUCTS'))
 
         return{
             products,
@@ -49,7 +48,8 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 20px 10px;
-    gap: 40px 65px;
+    padding: 30px 10px;
+    gap: 20px 65px;
 }
+
 </style>

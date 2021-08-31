@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="product.photo" class="book_img">
+    <img :src="product.photo" class="book_img"/>
     <div class="book_info">
         <h3>{{product.tittle}}</h3>
         <h4>${{product.price}}</h4>
@@ -16,14 +16,11 @@ export default {
 
 <style>
 .book_img{
-    width: 250px;
-    height: 280px;
+  width: 200px;
+  height: 220px;
 }
 .book_info{
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: space-between;
   color: #333;
+  text-align: center;
 }
 </style>

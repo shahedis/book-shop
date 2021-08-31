@@ -43,14 +43,14 @@ export default {
 
 <style scoped>
 form{
-    background-color: #eeeeee82;
+    background-color:white;
     box-shadow: 1px 2px 24px -3px rgb(72 72 72 / 43%);
-    max-width: 500px;
+    max-width: 400px;
     font-size: 22px;
     color: #333;
-    padding:53px 72px;
+    padding: 30px 45px;
     border-radius: 25px;
-    margin: 50px auto;
+    margin: 65px auto;
     text-align: left;
     display: flex;
     flex-direction: column;

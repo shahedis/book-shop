@@ -8,7 +8,7 @@
   <div>
     <p style="text-align: left">{{book.description}}</p>
   </div>
-  <div>this is cart : {{cart}}</div>
+  <div>this is cart : {{carts}}</div>
   <!-- <button @click="addToCarts" :disabled="itemAlreadyInCart" class="addItem">{{itemAlreadyInCart? "Added" : "Add to carts" }}</button> -->
   <button @click="addToCarts" class="addItem">click here</button>
 </div>
@@ -16,7 +16,7 @@
 
 <script>
 import { computed } from '@vue/runtime-core'
-import {useStore} from 'vuex'
+// import {useStore} from 'vuex'
 // import fetchOneBook from '../composables/fetchOneBook'
 
 export default {
@@ -24,17 +24,19 @@ export default {
 
   setup(props){
 
-    const store = useStore()
-    // const {book, error, loading, getBook} = fetchOneBook()
-     let book = store.getters.getProductById(props.id)
+    // const store = useStore()
 
-    let cart = computed(function(){
-      return store.state.cart
-    })
+    // const {book, error, loading, getBook} = fetchOneBook()
+
+    const book = store.getters.getProductById(props.id)
+
+    // const carts = computed(function(){
+    //   return store.state.carts
+    // })
 
     let itemAlreadyInCart = computed(function(){
       let inCart = false
-      cart.value.forEach(element => {
+      carts.value.forEach(element => {
         if(element.id === props.id){
           inCart = true
           console.log("added")
@@ -44,29 +46,20 @@ export default {
       return inCart
     })
 
-    // function addToCarts(){
-    //   if(!itemAlreadyInCart.value){
-    //     store.commit('addToCart', book)
-    //   }
-    //   else{
-    //     alert("Item already added to carts")
-    //   }
-    // }
-
     function addToCarts(){
-      console.log("cart :  " + this.cart);
-      console.log("book :  " + this.book);
+      console.log("carts :  " + this.$store.state.carts);
+      console.log("book :  " + book);
+      console.log(this);
+
     }
 
-    // onMounted(getBook(props.id))
+  
 
     return{
-        // error,
-        // loading,
-        book,
-        addToCarts,
-        itemAlreadyInCart,
-        cart
+      book,
+      addToCarts,
+      itemAlreadyInCart,
+      carts
     }
   },
 }
@@ -84,7 +77,7 @@ export default {
 }
 .addItem{
   float: left;
-  margin-top: 23px;
+  margin-top: 30px;
   padding: 10px 20px;
   border-radius: 8px;
   border: 1px solid #24a224;
