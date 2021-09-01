@@ -12,7 +12,7 @@
 
 <script>
 
-import { computed, onMounted } from 'vue'
+import { computed } from 'vue'
 import {useStore} from 'vuex'
 import Product from './Product.vue'
 
@@ -28,7 +28,7 @@ export default {
         
         const products = computed(() => store.state.products)
 
-        onMounted(()=> store.dispatch('GET_PRODUCTS'))
+        // onMounted(()=> store.dispatch('GET_PRODUCTS'))
 
         return{
             products,
