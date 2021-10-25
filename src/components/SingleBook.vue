@@ -16,7 +16,7 @@
 
 <script>
 import { computed } from '@vue/runtime-core'
-// import {useStore} from 'vuex'
+import {useStore} from 'vuex'
 // import fetchOneBook from '../composables/fetchOneBook'
 
 export default {
@@ -24,15 +24,15 @@ export default {
 
   setup(props){
 
-    // const store = useStore()
+    const store = useStore()
 
     // const {book, error, loading, getBook} = fetchOneBook()
 
     const book = store.getters.getProductById(props.id)
 
-    // const carts = computed(function(){
-    //   return store.state.carts
-    // })
+    const carts = computed(function(){
+      return store.state.carts
+    })
 
     let itemAlreadyInCart = computed(function(){
       let inCart = false

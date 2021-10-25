@@ -40,7 +40,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
 #app{
   font-family: monospace, sans-serif, 'Segoe UI', Tahoma, Verdana;
   text-align: center;
