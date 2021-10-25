@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SignupForm from '../components/SignupForm.vue'
-import SingleBook from '../components/SingleBook.vue'
 import Home from '../components/Home.vue'
 import NotFound from '../components/NotFound.vue'
 
@@ -14,12 +13,6 @@ const routes = [
         path: '/signup',
         name: 'signup',
         component: SignupForm
-    },
-    {
-        path: '/book/:id',
-        name: 'bookDetails',
-        component: SingleBook,
-        props: true
     },
     {
         path: '/:catchAll(.*)',

@@ -1,24 +1,27 @@
 <template>
-<h3>There are {{productsCount}} books</h3>
-<div class="books_list_wrapper">
-    <router-link v-for="product in products" :key="product.id" class="books_list" :to="{ name: 'bookDetails', params: { id: product.id } }">
-    </router-link>
-    <div class="content">
-        <router-view></router-view>
-    </div> 
-</div>
+    <h3>There are {{productsCount}} books</h3>
+    <div class="books_list_wrapper">
+        <router-link v-for="product in products" :key="product.id" class="books_list" :to="{ name: 'bookDetails', params: { id: product.id } }">
+            <Product :product="product" />
+        </router-link>
+        <div class="content">
+            <router-view></router-view>
+        </div> 
+    </div>
 </template>
 
 <script>
-
 import { computed } from 'vue'
 import {useStore} from 'vuex'
+import Product from './Product.vue'
 
 export default {
     components: {
+        Product
     },
 
     setup (){
+
         const store = useStore()
         const productsCount = store.getters.productsLength
         
@@ -29,7 +32,6 @@ export default {
             productsCount,
         }
     }
-
 }
 </script>
 
